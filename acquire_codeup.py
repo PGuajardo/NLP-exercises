@@ -1,5 +1,5 @@
 from requests import get
-from bs4 import BeeautifulSoup
+from bs4 import BeautifulSoup
 import os
 
 '''
@@ -17,7 +17,7 @@ def get_blog_articles(x):
     # Set link and use soup to help dive into the code
     url = x
     headers = {'User-Agent' : 'Codeup Blog post'}
-    response = get{url, headers = headers}
+    response = get(url, headers = headers)
 
     soup = BeautifulSoup(response.content, 'html.parser')
 
