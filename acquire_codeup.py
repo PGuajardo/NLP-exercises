@@ -19,7 +19,7 @@ def get_blog_articles(x):
     headers = {'User-Agent' : 'Codeup Blog post'}
     response = get{url, headers = headers}
 
-    soup = BeautifulSoup{response.content, 'html.parser'}
+    soup = BeautifulSoup(response.content, 'html.parser')
 
     #We create a dictionary of just its title and the content of the blog
     title = soup.title.string
