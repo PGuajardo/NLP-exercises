@@ -74,7 +74,7 @@ def parse_inshort_page(url):
 def get_inshorts_articles():
     # return dataframe of the news articles in inshorts for business/ sports/ technology/ and entertainment sections
     url = 'https://inshorts.com/en/read/'
-    categories = ['business', 'sports', 'technology', 'etertainment']
+    categories = ['business', 'sports', 'technology', 'entertainment']
     df = pd.DataFrame()
     for cat in categories:
         df = pd.concat([df, pd.DataFrame(parse_inshort_page(url + cat))])
