@@ -53,13 +53,20 @@ def lemmatize(x):
     article_lemmatized = ' '.join(lemmas)
     return article_lemmatized
 
-
-def remove_stopwords(extra_words, exclude_words, x):
+def remove_stopwords(x, extra_words = [], exclude_words = []):
     # setting the list to english
     stopword_list = stopwords.words('english')
 
-    stopword_list = [stopword_list.append(i) for i in extra_words]
-    stopword_list = [stopword_list.remove(i) for i in exclude_words]
+    # if there is something in extra_words list
+    if len(extra_words) != 0:
+        for i in extra_words:
+            stopword_list = stopword_list.append(i)
+
+    # if its there is a word similare to stopword_list remove that word else do nothing
+    for i in exclude_words:
+        if i in stopword_list:
+            stopword_list = stopword_list.remove(i)
+
 
     words = x.split()
     filtered_words = [w for w in words if w not in stopword_list]
