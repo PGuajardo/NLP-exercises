@@ -32,8 +32,8 @@ def basic_clean(x):
 
 def tokenize(x):
     tokenizer = nltk.tokenize.ToktokTokenizer()
-
-    return print(tokenizer.tokenize(x , return_str = True))
+    x = tokenizer.tokenize(x , return_str = True)
+    return x
 
 
 
